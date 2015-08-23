@@ -1,8 +1,10 @@
 # analoq's JACK Tools
 
 
-## jack_splittr - JACK MIDI keyboard splitter
+## MIDI keyboard splitter
 
-## jack_transposr - JACK MIDI transposer
+`Usage: jack_splittr [MIDI Note] [MIDI Note] [MIDI Note] ...
 
+## MIDI transposer
 
+`Usage: jack_transposr [Transpose amount]
