@@ -1,7 +1,5 @@
 #pragma once
 #include <stdexcept>
-#include <vector>
-#include <set>
 #include <jack/jack.h>
 #include <jack/midiport.h>
 
