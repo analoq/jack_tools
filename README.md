@@ -1,4 +1,4 @@
-# analoq's JACK Tools
+# JACK Tools
 
 
 ## MIDI keyboard splitter
@@ -12,3 +12,7 @@ Usage:  jack_transposr [Transpose amount]
 ## MIDI "bass" transposer
 
 Usage:  jack_basstransposr [Reference Note]
+
+## MIDI "bass" splitter
+
+Usage:  jack_basssplittr
