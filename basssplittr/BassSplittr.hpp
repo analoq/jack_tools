@@ -3,7 +3,7 @@
 #include <set>
 #include <jack/jack.h>
 #include <jack/midiport.h>
-#include <iostream>
+
 using namespace std;
 
 class BassSplittr
@@ -95,7 +95,6 @@ public:
             {
               if ( last_lowest != -1 )
               {
-                cerr << "off: " << last_lowest << endl;
                 // release old bass note
                 uint8_t buffer[3] = {static_cast<uint8_t>(0x8F & event.buffer[0]),
                                      static_cast<uint8_t>(last_lowest),
@@ -104,7 +103,6 @@ public:
               }
 
               // new bass note
-              cerr << "on: " << current_lowest << endl;
               jack_midi_event_write(port_buffer_out, event.time, event.buffer, event.size);
             }
             break;
@@ -114,7 +112,6 @@ public:
 
           if ( last_lowest == event.buffer[1] )
           {
-            cerr << "off: " << last_lowest << endl;
             // release old bass note
             jack_midi_event_write(port_buffer_out, event.time, event.buffer, event.size);
 
@@ -122,7 +119,6 @@ public:
             if ( current_lowest != -1 )
             {
               // new bass note
-              cerr << "on: " << current_lowest << endl;
               uint8_t buffer[3] = {static_cast<uint8_t>(0x90 | (event.buffer[0] & 0x0F)),
                                    static_cast<uint8_t>(current_lowest),
                                    bass_splittr->getLowestNote().velocity};
